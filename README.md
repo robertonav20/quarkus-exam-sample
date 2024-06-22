@@ -15,6 +15,7 @@ curl -L -X POST 'http://localhost:8080/realms/quarkus-exam/protocol/openid-conne
 
 [Kafka](http://localhost:29092)
 [Infinispan](http://localhost:11222/console)
-[Postgres](postgresql::/localhost:5432)
+[Postgres](postgresql://localhost:5432)
+[Jaeger](http://localhost:16686)
 [Keycloak](http://localhost:8080/)
 [Keycloak Realm Configuration](http://localhost:8080/realms/quarkus-exam/.well-known/openid-configuration)
