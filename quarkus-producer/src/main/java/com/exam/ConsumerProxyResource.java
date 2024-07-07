@@ -8,9 +8,7 @@ import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @Path("/proxy")
 @RolesAllowed({"quarkus-exam-role"})
 public class ConsumerProxyResource {
