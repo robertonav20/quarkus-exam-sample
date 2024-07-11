@@ -2,6 +2,7 @@ package com.exam;
 
 import java.util.concurrent.CompletionStage;
 import org.eclipse.microprofile.metrics.annotation.Counted;
+import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
 import com.exam.model.Event;
@@ -18,6 +19,10 @@ public class EventResource {
     @Channel("events")
     Emitter<Event> eventEmitter;
 
+    @Operation(
+        summary = "Publish Event",
+        description = "Publish an event to kafka"
+    )
     @POST
     @Path("/produce")
     @Consumes(MediaType.APPLICATION_JSON)
