@@ -35,6 +35,12 @@ public class ConsumerProxyResource {
         return proxyService.getDbByKey(key);
     }
 
+    @GET
+    @Path("/db/{key}/count")
+    public String countDbByKey(@PathParam(value = "key") String key) {
+        return proxyService.countDbByKey(key);
+    }
+
     @DELETE
     @Path("/db/{key}")
     public String deleteDbByKey(@PathParam(value = "key") String key) {

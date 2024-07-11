@@ -14,12 +14,15 @@ import lombok.Setter;
 @Entity
 public class EventEntity extends PanacheEntity {
 
-    public String key;
-    public String value;
-
+    private String key;
+    private String value;
 
     public static EventEntity findByKey(String key) {
         return find("key", key).firstResult();
+    }
+
+    public static long countByKey(String key) {
+        return find("key", key).count();
     }
 
     public static void deleteByKey(String key) {

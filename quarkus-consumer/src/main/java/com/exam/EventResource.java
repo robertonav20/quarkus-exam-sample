@@ -51,6 +51,15 @@ public class EventResource {
         return buildResponse(key, EventEntity.findByKey(key).getValue());
     }
 
+    @GET
+    @Path("/db/{key}/count")
+    @Produces(MediaType.APPLICATION_JSON)
+    @CircuitBreaker(failureRatio = 1, successThreshold = 1)
+    @Counted(name = "event-retrieved-count-db-api", description = "Number of event retrieved count db via api")
+    public Response countDb(@PathParam(value = "key") String key) {
+        return Response.ok(EventEntity.countByKey(key)).build();
+    }
+
     @DELETE
     @Path("/db/{key}")
     @Produces(MediaType.APPLICATION_JSON)

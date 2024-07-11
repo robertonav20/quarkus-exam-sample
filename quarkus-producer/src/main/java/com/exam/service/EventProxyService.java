@@ -30,6 +30,11 @@ public interface EventProxyService {
     @Produces(MediaType.APPLICATION_JSON)
     public String getDbByKey(@PathParam(value = "key") String key);
 
+    @GET
+    @Path("/db/{key}/count")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String countDbByKey(@PathParam(value = "key") String key);
+
     @DELETE
     @Path("/db/{key}")
     public String deleteDbByKey(@PathParam(value = "key") String key);
